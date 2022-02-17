@@ -10,11 +10,21 @@ let squares = []
 function createBoard(){
     for( let i=0; i< width*width; i++){
         square = document.createElement('div')
-        square.innerHTML = 0
+        square.innerHTML = ""
         gridDisplay.appendChild(square)
         squares.push(square)
     } 
+    generate()
+    generate()
 }
 
 createBoard()
+
+// Gerando número randomicamente 
+function generate(){
+   let randomNumber = Math.floor(Math.random() * squares.length)
+   if(squares [randomNumber].innerHTML == ''){
+       squares [randomNumber].innerHTML = 2
+   }else generate()
+}
 })
